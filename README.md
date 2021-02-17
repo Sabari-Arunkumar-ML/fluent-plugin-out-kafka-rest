@@ -36,25 +36,16 @@ The following is an example.
       # rate_limit_msec 0
     </match>
 
-I simply tested https mode with AWS's ELB.
 
-IMAGE
-
- fluentd --> ELB --> Kafka REST Proxy --> Kafka
 
 ## ToDo
 
 * Change tests
-* Fix the function to include tags and timestamps.
-  We should include such information into the request body.
-* Add function to submit multiple records at once.
 * Avro support
 
 ## Note
 
 * Set `use_ssl` to true to use https connection
-* Set `include_tag` to true to include fluentd tag in the event log as a property 
-* Set `include_timestamp` to true to include timestamp (UNIX time) in the event log as a property
 * By default, it does not verify the https server. Use VERIFY_PEER and place the cert.pem to the location specified by OpenSSL::X509::DEFAULT_CERT_FILE. 
 * Majority of the code are cloned from  [fluent-plugin-out-https][2]
 
